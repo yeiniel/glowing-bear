@@ -15,6 +15,7 @@ import { fileChangeDirective } from './file-change.directive';
 import { handlersFactory } from './handlers.factory';
 import { imgurDropDirective } from './imgur-drop.directive';
 import { imgurFactory } from './imgur.factory';
+import { inputBarDirective } from './input-bar.directive';
 
 // cordova splash screen
 document.addEventListener("deviceready", function () {
@@ -38,7 +39,8 @@ weechat.filter('toArray', toArrayFilter)
     .directive('fileChange', fileChangeDirective)
     .factory('handlers', handlersFactory)
     .directive('imgurDrop', imgurDropDirective)
-    .factory('imgur', imgurFactory);
+    .factory('imgur', imgurFactory)
+    .directive('inputBar', inputBarDirective);
 
 weechat.config(['$compileProvider', function ($compileProvider) {
     // hack to determine whether we're executing the tests
