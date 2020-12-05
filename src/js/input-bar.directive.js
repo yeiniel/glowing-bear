@@ -805,4 +805,4 @@ export function inputBarDirective() {
             };
         }]
     };
-};
+}
