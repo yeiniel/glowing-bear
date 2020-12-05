@@ -13,6 +13,7 @@ import { latexmathFilter } from './latexmath.filter';
 import { bufferResumeService } from './buffer-resume.service';
 import { fileChangeDirective } from './file-change.directive';
 import { handlersFactory } from './handlers.factory';
+import { imgurDropDirective } from './imgur-drop.directive';
 
 // cordova splash screen
 document.addEventListener("deviceready", function () {
@@ -34,7 +35,8 @@ weechat.filter('toArray', toArrayFilter)
     .filter('latexmath', latexmathFilter)
     .service('bufferResume', bufferResumeService)
     .directive('fileChange', fileChangeDirective)
-    .factory('handlers', handlersFactory);
+    .factory('handlers', handlersFactory)
+    .directive('imgurDrop', imgurDropDirective);
 
 weechat.config(['$compileProvider', function ($compileProvider) {
     // hack to determine whether we're executing the tests
