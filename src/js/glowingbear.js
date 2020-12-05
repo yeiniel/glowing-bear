@@ -11,6 +11,7 @@ import { codifyFilter } from './codify.filter';
 import { prefixlimitFilter } from './prefixlimit.filter';
 import { latexmathFilter } from './latexmath.filter';
 import { bufferResumeService } from './buffer-resume.service';
+import { fileChangeDirective } from './file-change.directive';
 
 // cordova splash screen
 document.addEventListener("deviceready", function () {
@@ -30,7 +31,8 @@ weechat.filter('toArray', toArrayFilter)
     .filter('codify', codifyFilter)
     .filter('prefixlimit', prefixlimitFilter)
     .filter('latexmath', latexmathFilter)
-    .service('bufferResume', bufferResumeService);
+    .service('bufferResume', bufferResumeService)
+    .directive('fileChange', fileChangeDirective);
 
 weechat.config(['$compileProvider', function ($compileProvider) {
     // hack to determine whether we're executing the tests
