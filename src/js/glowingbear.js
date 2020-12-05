@@ -10,6 +10,7 @@ import { inlinecolourFilter } from './inlinecolour.filter';
 import { codifyFilter } from './codify.filter';
 import { prefixlimitFilter } from './prefixlimit.filter';
 import { latexmathFilter } from './latexmath.filter';
+import { bufferResumeService } from './buffer-resume.service';
 
 // cordova splash screen
 document.addEventListener("deviceready", function () {
@@ -18,7 +19,7 @@ document.addEventListener("deviceready", function () {
     }
 }, false);
 
-var weechat = angular.module('weechat', ['ngRoute', 'localStorage', 'weechatModels', 'bufferResume', 'plugins', 'IrcUtils', 'ngSanitize', 'ngWebsockets', 'ngTouch'], ['$compileProvider', function($compileProvider) {
+var weechat = angular.module('weechat', ['ngRoute', 'localStorage', 'weechatModels', 'plugins', 'IrcUtils', 'ngSanitize', 'ngWebsockets', 'ngTouch'], ['$compileProvider', function($compileProvider) {
     // hacky way to be able to find out if we're in debug mode
     weechat.compileProvider = $compileProvider;
 }]);
@@ -28,7 +29,8 @@ weechat.filter('toArray', toArrayFilter)
     .filter('inlinecolour', inlinecolourFilter)
     .filter('codify', codifyFilter)
     .filter('prefixlimit', prefixlimitFilter)
-    .filter('latexmath', latexmathFilter);
+    .filter('latexmath', latexmathFilter)
+    .service('bufferResume', bufferResumeService);
 
 weechat.config(['$compileProvider', function ($compileProvider) {
     // hack to determine whether we're executing the tests
