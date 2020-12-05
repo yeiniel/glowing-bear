@@ -14,6 +14,7 @@ import { bufferResumeService } from './buffer-resume.service';
 import { fileChangeDirective } from './file-change.directive';
 import { handlersFactory } from './handlers.factory';
 import { imgurDropDirective } from './imgur-drop.directive';
+import { imgurFactory } from './imgur.factory';
 
 // cordova splash screen
 document.addEventListener("deviceready", function () {
@@ -36,7 +37,8 @@ weechat.filter('toArray', toArrayFilter)
     .service('bufferResume', bufferResumeService)
     .directive('fileChange', fileChangeDirective)
     .factory('handlers', handlersFactory)
-    .directive('imgurDrop', imgurDropDirective);
+    .directive('imgurDrop', imgurDropDirective)
+    .factory('imgur', imgurFactory);
 
 weechat.config(['$compileProvider', function ($compileProvider) {
     // hack to determine whether we're executing the tests
