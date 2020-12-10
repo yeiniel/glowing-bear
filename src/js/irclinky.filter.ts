@@ -2,7 +2,7 @@
 'use strict';
 
 export function irclinkyFilter() {
-    return function(text) {
+    return function(text: string) {
         if (!text) {
             return text;
         }
