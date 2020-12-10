@@ -16,6 +16,9 @@ module.exports = {
         contentBase: path.resolve(__dirname, 'build')
     },
     devtool: 'source-map',
+    resolve: {
+        extensions: [".ts", ".js"]
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: './index.html',
@@ -39,7 +42,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/i,
+                test: /\.(j|t)s$/i,
                 exclude: /node_modules/,
                 use: [
                     {
