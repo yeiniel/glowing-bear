@@ -2,7 +2,7 @@
 'use strict';
 
 export function prefixlimitFilter() {
-    return function(input, chars) {
+    return function(input: string, chars: number) {
         if (isNaN(chars)) return input;
         if (chars <= 0) return '';
         if (input && input.length > chars) {
