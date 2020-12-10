@@ -1,8 +1,6 @@
 
-'use strict';
-
 export function codifyFilter() {
-    return function(text) {
+    return function(text: string) {
         // The groups of this regex are:
         // 1. Start of line or space, to prevent codifying weird`stuff` like this
         // 2. Opening single or triple backticks (not 2, not more than 3)
