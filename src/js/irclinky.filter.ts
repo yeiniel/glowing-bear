@@ -1,6 +1,4 @@
 
-'use strict';
-
 export function irclinkyFilter() {
     return function(text: string) {
         if (!text) {

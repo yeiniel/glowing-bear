@@ -1,6 +1,4 @@
 
-'use strict';
-
 export function inlinecolourFilter() {
     return function(text: string) {
         if (!text) {
